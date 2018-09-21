@@ -1,6 +1,7 @@
 :root
 {
   box-sizing: border-box;
+  font-size: calc(0.5em + 1vw)
 }
 
 *, ::before, ::after
@@ -121,6 +122,58 @@ a:hover
   font-weight: 300;
 }
 
+.text-left{
+  text-align: left;
+  color: #000000;
+}
+
+.grid-container-col-2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  background: #ffffff;
+  padding: 5rem 0.5rem;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-item{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.gap-1{
+  grid-gap: 1rem;
+}
+
+.fotografia{
+  height: 435px;
+  background-image: url(../img/fotografia.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right{
+  margin-left: auto;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+}
+
+.text-uppercase{
+  text-transform: uppercase;
+}
+
 /* Telefonos y tablet */
 @media (max-width: 767px) {
   .container {
@@ -130,5 +183,14 @@ a:hover
 
   .main-content h1 {
     font-size: 5em;
+  }
+  .grid-container-col-2{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media(max-width: 400px){
+  .container{
+    width:100%;
   }
 }
